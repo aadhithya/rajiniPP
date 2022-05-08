@@ -29,7 +29,7 @@ KATHAM KATHAM
 The Print function is summoned by using the `DOT` command.
 ```
 LAKSHMI START
-DOT("Hello world!");
+DOT("Hello, world!");
 KATHAM KATHAM
 ```
 will result in the following output:
