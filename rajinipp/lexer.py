@@ -1,11 +1,13 @@
+from munch import Munch
 from rply import LexerGenerator
+
 from .utils import read_yml
 
 
 class Lexer:
-    def __init__(self, token_yml: str = None) -> None:
+    def __init__(self, tokens: Munch = None) -> None:
         self._lexer = LexerGenerator()
-        self._tokens = read_yml(token_yml)
+        self._tokens = tokens
 
     def __add_tokens(self):
         for token in self._tokens:
