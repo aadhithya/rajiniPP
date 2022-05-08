@@ -59,5 +59,12 @@ def run(file_path: str):
     parsed.eval()
 
 
+@app.callback()
+def main():
+    """
+    rajini++(rajinipp) is a hobby programming language based on the iconic dialogues of super star Rajinikanth.
+    """
+
+
 if __name__ == "__main__":
     app()
