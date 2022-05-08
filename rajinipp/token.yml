@@ -5,5 +5,8 @@ CLOSE_PAREN: \)
 SEMI_COLON: \;
 SUM: \+
 SUB: \-
+EQUALS: \=
 
 NUMBER: \d+
+# WORD: "[a-z]+"
+# NEWLINE: \n
