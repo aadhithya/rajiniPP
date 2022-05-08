@@ -33,6 +33,7 @@ DOT("Hello world!");
 KATHAM KATHAM
 ```
 will result in the following output:
+
 ![hello world output](./imgs/hello-out.png)
 
 
