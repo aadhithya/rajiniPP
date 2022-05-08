@@ -25,7 +25,7 @@
 |AssignVariableFromMethodCall ||
 |DeclareInt |AANDAVAN SOLLRAN |
 |SetInitialValue |ARUNACHALAM SEIYARAN |
-|BeginMain |LAKSHMI START| 
+|BeginMain |LAKSHMI START|
 |EndMain |KATHAM KATHAM |
 |Print |CHUMMA ADHURUDHULLA |
 |ReadInteger ||

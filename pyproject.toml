@@ -9,6 +9,8 @@ license = "MIT License"
 python = ">3.8, <3.11"
 llvmlite = "^0.38.0"
 rply = "^0.7.8"
+munch = "^2.5.0"
+loguru = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 poetry = "^1.1.13"

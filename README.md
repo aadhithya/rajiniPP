@@ -1,8 +1,8 @@
 # Rajini++
 
-Rajini++ (rajiniPP) is a programming language based on the iconic dialogues by Rajinikanth. 
+Rajini++ (rajiniPP) is a programming language based on the iconic dialogues by Rajinikanth.
 
-The project is an interpteter(rather translator?) to execute the Rajini++ code by converting it to python code. 
+The project is an interpteter(rather translator?) to execute the Rajini++ code by converting it to python code.
 
 The inspiration for this project is drawn from the amazing [ArnoldC](https://github.com/lhartikk/ArnoldC) project.
 
@@ -28,7 +28,7 @@ All Rajini++ codes exist within the main method. The form is:
 ```
 LAKSHMI START
 [code statements]
-KATHAM KATHAM 
+KATHAM KATHAM
 ```
 Because Rajini++ doesn't yet support functions, this all the code goes into the main block.
 
@@ -42,7 +42,7 @@ LAKSHMI START
 NAA SOLRADHAYUM SEIVEN x SOLLADHADHAYUM SEIVEN 10
 #print(x)
 UNMAI ELLAM SOLLA THONUDHE x
-KATHAM KATHAM 
+KATHAM KATHAM
 ```
 
 ### Declaring a Variable
@@ -54,7 +54,7 @@ e.g.,
 LAKSHMI START
 # x = 10
 NAA SOLRADHAYUM SEIVEN x SOLLADHADHAYUM SEIVEN 10
-KATHAM KATHAM 
+KATHAM KATHAM
 ```
 ### Assigning Variable
 
@@ -69,9 +69,9 @@ TODO
 #### 3. Multiplication
 TODO
 #### 4. Division
-_command_: `SEEVIDUVEN` 
+_command_: `SEEVIDUVEN`
 e.g. `z = x seeviduven y #z=x/y`
- 
+
 ## `helloworld.baasha`
 ---
 ```
