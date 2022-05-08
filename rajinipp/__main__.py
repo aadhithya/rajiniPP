@@ -1,19 +1,24 @@
 import os
-import pdb
+import sys
 from pathlib import Path
 
+import typer
 from loguru import logger
 
 from .lexer import Lexer
 from .parser import Parser
 from .utils import read_yml
 
-if __name__ == "__main__":
-    with open("./test-programs/hello.rpp", "r") as f:
+logger.remove()
+logger.add(sys.stderr, level="INFO")
+
+
+def main(file_path: str):
+    with open(file_path, "r") as f:
         input_text = f.read()
 
     yml_path = os.path.join(Path(__file__).parent, "token.yml")
-    logger.info(yml_path)
+    # logger.info(yml_path)
 
     tokens_dict = read_yml(yml_path)
 
@@ -31,3 +36,7 @@ if __name__ == "__main__":
     parsed = parser.parse(tokens)
 
     parsed.eval()
+
+
+if __name__ == "__main__":
+    typer.run(main)
