@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rajinipp"
-version = "0.1.0"
+version = "0.0.1"
 description = "Rajini++ (rajiniPP) is a programming language based on the iconic dialogues by Rajinikanth."
 authors = ["Aadhithya Sankar <a.sankar@tum.de>"]
 license = "MIT License"
@@ -11,6 +11,7 @@ llvmlite = "^0.38.0"
 rply = "^0.7.8"
 munch = "^2.5.0"
 loguru = "^0.6.0"
+typer = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 poetry = "^1.1.13"
@@ -20,3 +21,6 @@ pre-commit = "^2.19.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+rajinipp = "rajinipp.__main__:app"
