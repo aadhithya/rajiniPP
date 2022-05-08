@@ -1,12 +1,15 @@
-PRINT: "print"
+PGM_START: "LAKSHMI START"
+PGM_END: "KATHAM KATHAM"
+
+PRINT: "DOT"
 
 OPEN_PAREN: \(
 CLOSE_PAREN: \)
 SEMI_COLON: \;
 SUM: \+
 SUB: \-
-EQUALS: \=
+# EQUALS: \=
 
 NUMBER: \d+
 # WORD: "[a-z]+"
-# NEWLINE: \n
+STRING: \".*?\"
