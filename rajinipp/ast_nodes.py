@@ -18,6 +18,15 @@ class Number(Node):
         return int(self.value)
 
 
+class String(Node):
+    def __init__(self, value) -> None:
+        super().__init__()
+        self.value = value
+
+    def eval(self):
+        return self.value.replace('"', "")
+
+
 class BinaryOp(Node):
     def __init__(self, left, right) -> None:
         super().__init__()
@@ -41,6 +50,7 @@ class Print(Node):
         self.value = value
 
     def eval(self):
+        logger.debug(f"Print-value:{self.value.eval()}")
         print(self.value.eval())
 
 
