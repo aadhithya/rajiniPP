@@ -9,6 +9,7 @@ from .ast_nodes import (
     Print,
     Statement,
     StatementsBlock,
+    String,
     Sub,
     Sum,
 )
@@ -21,10 +22,10 @@ class Parser:
         )
 
     def parse(self):
-        @self.pg.production("main : statements")
+        @self.pg.production("main : PGM_START statements PGM_END")
         def main(p):
             logger.debug("Parser --> main")
-            return MainBlock(p[0])
+            return MainBlock(p[1])
 
         @self.pg.production("statements : statements statement")
         def statements(p):
@@ -57,9 +58,14 @@ class Parser:
                 return Sub(left, right)
 
         @self.pg.production("expression : NUMBER")
-        def number(p):
+        def number_expr(p):
             logger.debug("Parser --> number")
             return Number(p[0].value)
+
+        @self.pg.production("expression : STRING")
+        def string_expr(p):
+            logger.debug("Parser --> string")
+            return String(p[0].value)
 
         @self.pg.error
         def error(token):
