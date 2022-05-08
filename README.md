@@ -1,81 +1,42 @@
-# Rajini++
+# rajini++
 
-Rajini++ (rajiniPP) is a programming language based on the iconic dialogues by Rajinikanth.
+rajini++ (rajinipp, rajiniPP) is a hobby programming language based on the iconic dialogues of Rajinikanth.
 
-The project is an interpteter(rather translator?) to execute the Rajini++ code by converting it to python code.
+This project is inspired by the [ArnoldC](https://github.com/lhartikk/ArnoldC) project.
 
-The inspiration for this project is drawn from the amazing [ArnoldC](https://github.com/lhartikk/ArnoldC) project.
+## Installation
+right now, the only way to get rajini++ is to clone the repository and build your own wheel. You need to have at least python 3.8 installed.
+- clone project: `git clone https://github.com/aadhithya/rajiniPP.git`
+- change directory to rajiniPP: `cd rajiniPP`
+- install poetry: `pip install poetry`
+- generate wheel: `poetry build`
+- install rajini++: `pip install dist/rajinipp-0.0.1-py3-none-any.whl`
+- test installation: `rajinipp version`
 
-## Language Description
----
+## The rajini++ language
 
-Rajini++ is not a super feature rich language. To start with, it is designed to support the basic programming constructs like:
-
-* __Math Ops:__  addition, subtraction, multiplication, division, modulo.
-* __Logical Ops:__ gt, gte, lt, lte, eq, and, or, not
-* __Programming Constructs__: if block, if-else block, for/while loop
-
-The language is also designed to be easily modifiable; one can change the commands to whatever (s)he wants by modifying the `placeholder.json` file.
-
-Rajini++ has a syntax similar to ArnoldC but is simplified for ease of use.
-
-Rajini++ codes can be embedded within python scripts.
-
-Rajini++ scripts have the extension __`.baasha`__.
+rajini++ is not a feature rich language, it is rather a hobby language and a tribute to the one and only super star.
 
 ### Main Method
-All Rajini++ codes exist within the main method. The form is:
+All rajini++ codes exist within the main method. The form is:
 ```
 LAKSHMI START
 [code statements]
 KATHAM KATHAM
 ```
-Because Rajini++ doesn't yet support functions, this all the code goes into the main block.
 
-### Printing
-The Print function is summoned by using the `UNMAI ELLAM SOLLA THONUDHE` command.
-
-e.g.,
+### The `hello_world.rpp` program
+The Print function is summoned by using the `DOT` command.
 ```
 LAKSHMI START
-# x = 10
-NAA SOLRADHAYUM SEIVEN x SOLLADHADHAYUM SEIVEN 10
-#print(x)
-UNMAI ELLAM SOLLA THONUDHE x
+DOT("Hello world!");
 KATHAM KATHAM
 ```
+will result in the following output:
+![hello world output](./imgs/hello-out.png)
 
-### Declaring a Variable
 
-All variables should be declared with an initial value. Declaration can be done using the `NAA SOLRADHAYUM SEIVEN` command.  Assignment is done using the `SOLLADHADHAYUM SEIVEN` command.
+- **Note**: All raniji++ statements terminate with a semicolon!
 
-e.g.,
-```
-LAKSHMI START
-# x = 10
-NAA SOLRADHAYUM SEIVEN x SOLLADHADHAYUM SEIVEN 10
-KATHAM KATHAM
-```
-### Assigning Variable
-
-TODO
-
-### Math Operations
-
-#### 1. Addition
-TODO
-#### 2. Subtraction
-TODO
-#### 3. Multiplication
-TODO
-#### 4. Division
-_command_: `SEEVIDUVEN`
-e.g. `z = x seeviduven y #z=x/y`
-
-## `helloworld.baasha`
----
-```
-LAKSHMI START
-UNMAI ELLAM SOLLA THONUDHE 'Hello, World!'
-KATHAM KATHAM
-```
+### Running a rajini++ script
+- the rajini++ scripts(`.rpp`) can be run using the following command: `rajinipp run path/to/file./rpp`
