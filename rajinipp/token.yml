@@ -1,0 +1,9 @@
+PRINT: "print"
+
+OPEN_PAREN: \(
+CLOSE_PAREN: \)
+SEMI_COLON: \;
+SUM: \+
+SUB: \-
+
+NUMBER: \d+
