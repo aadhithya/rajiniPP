@@ -1,4 +1,18 @@
+import pdb
+
 from .base import Node, Statement
+
+
+class PrintBlock(Node):
+    def __init__(self, exprs=None, value=None) -> None:
+        super().__init__()
+        self.exprs = exprs
+        self.value = value
+
+    def eval(self):
+        if self.exprs:
+            return self.exprs.eval() + [self.value.eval()]
+        return []
 
 
 class StatementsBlock(Node):
