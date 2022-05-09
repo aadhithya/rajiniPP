@@ -3,22 +3,19 @@ from typing import List
 from loguru import logger
 from rply import ParserGenerator
 
-from .ast_nodes import (
-    MainBlock,
-    Number,
-    Print,
-    Statement,
-    StatementsBlock,
-    String,
-    Sub,
-    Sum,
-)
+from .ast.base import Number, Print, String
+from .ast.blocks import MainBlock, StatementsBlock
+from .ast.ops import Div, Mod, Mul, Sub, Sum, UnarySub, UnarySum
 
 
 class Parser:
     def __init__(self, tokens: List[str]) -> None:
         self.pg = ParserGenerator(
-            tokens=tokens, precedence=[("left", ["SUM", "SUB"])]
+            tokens=tokens,
+            precedence=[
+                ("left", ["SUM", "SUB"]),
+                ("left", ["MUL", "DIV", "MOD"]),
+            ],
         )
 
     def parse(self):
@@ -37,16 +34,17 @@ class Parser:
             logger.debug("Parser --> statements_empty")
             return StatementsBlock()
 
-        @self.pg.production(
-            "statement : PRINT OPEN_PAREN expression CLOSE_PAREN SEMI_COLON"
-        )
+        @self.pg.production("statement : PRINT expression SEMI_COLON")
         def statement_print(p):
             logger.debug("Parser --> statement_print")
-            return Print(p[2])
+            return Print(p[1])
 
         @self.pg.production("expression : expression SUM expression")
         @self.pg.production("expression : expression SUB expression")
-        def expression(p):
+        @self.pg.production("expression : expression MUL expression")
+        @self.pg.production("expression : expression DIV expression")
+        @self.pg.production("expression : expression MOD expression")
+        def binary_expr(p):
             logger.debug("Parser --> expression")
             left = p[0]
             right = p[2]
@@ -56,6 +54,20 @@ class Parser:
                 return Sum(left, right)
             if op.gettokentype() == "SUB":
                 return Sub(left, right)
+            if op.gettokentype() == "MUL":
+                return Mul(left, right)
+            if op.gettokentype() == "DIV":
+                return Div(left, right)
+            if op.gettokentype() == "MOD":
+                return Mod(left, right)
+
+        @self.pg.production("expression : SUB expression")
+        @self.pg.production("expression : SUM expression")
+        def unary_expr(p):
+            if p[0].gettokentype() == "SUM":
+                return UnarySum(p[1])
+            if p[0].gettokentype() == "SUB":
+                return UnarySub(p[1])
 
         @self.pg.production("expression : NUMBER")
         def number_expr(p):
