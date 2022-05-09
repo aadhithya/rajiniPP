@@ -41,3 +41,20 @@ will result in the following output:
 
 ### Running a rajini++ script
 - the rajini++ scripts(`.rpp`) can be run using the following command: `rajinipp run path/to/file./rpp`
+
+
+## Roadmap
+- [x] Math Ops
+  - [x] MUL
+  - [x] DIV
+  - [x] MOD
+- [x] Unary Ops
+- [ ] variable assignment
+- [ ] variable access / manipulation
+- [ ] conditional expressions
+- [ ] if statement
+- [ ] if-else statement
+- [ ] for loop
+- [ ] while loop
+- [ ] rpp in python integration
+- [ ] void functions
