@@ -49,8 +49,10 @@ will result in the following output:
   - [x] DIV
   - [x] MOD
 - [x] Unary Ops
-- [ ] variable assignment
-- [ ] variable access / manipulation
+- [x] print multiple objects with the same statement.
+- [x] variable assignment
+- [x] variable access
+- [ ] variable manipulation
 - [ ] conditional expressions
 - [ ] if statement
 - [ ] if-else statement
