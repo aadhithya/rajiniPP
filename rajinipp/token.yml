@@ -3,13 +3,20 @@ PGM_END: "KATHAM KATHAM"
 
 PRINT: "DOT"
 
-OPEN_PAREN: \(
-CLOSE_PAREN: \)
+# OPEN_PAREN: \(
+# CLOSE_PAREN: \)
 SEMI_COLON: \;
 SUM: \+
 SUB: \-
-# EQUALS: \=
+MUL: \*
+DIV: \/
+MOD: \%
+EQUALS: \=
+# COMMA: \,
+
+START_ASSIGN: "AANDAVAN SOLLRAN"
+ASSIGN: "ARUNACHALAM SEIYARAN"
 
 NUMBER: \d+
-# WORD: "[a-z]+"
+WORD: "[a-z]+"
 STRING: \".*?\"
