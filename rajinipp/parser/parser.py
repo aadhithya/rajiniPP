@@ -3,7 +3,6 @@ from typing import List
 from loguru import logger
 from rply import ParserGenerator
 
-from ..ast.base import Assignment
 from ..ast.blocks import MainBlock
 from .atom_parser import AtomParser
 from .expr_parser import ExpressionParser
