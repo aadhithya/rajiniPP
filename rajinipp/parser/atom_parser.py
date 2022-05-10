@@ -1,6 +1,6 @@
 from loguru import logger
 
-from ..ast.base import Expression, Number, Print, String, Word
+from ..ast.base import Boolean, Expression, Number, Print, String, Word
 
 
 class AtomParser:
@@ -11,6 +11,11 @@ class AtomParser:
         def number_expr(p):
             logger.debug("Parser --> number")
             return Number(p[0].value)
+
+        @pg.production("expression : BOOL_TRUE")
+        @pg.production("expression : BOOL_FALSE")
+        def bool_expr(p):
+            return Boolean(p[0])
 
         @pg.production("expression : STRING")
         def string_expr(p):
