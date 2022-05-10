@@ -18,6 +18,18 @@ class Number(Node):
         return float(self.value)
 
 
+class Boolean(Node):
+    def __init__(self, value) -> None:
+        super().__init__()
+        if value.value.lower() == "true":
+            self.value = 1
+        elif value.value.lower() == "false":
+            self.value = 0
+
+    def eval(self):
+        return bool(self.value)
+
+
 class String(Node):
     def __init__(self, value) -> None:
         super().__init__()
