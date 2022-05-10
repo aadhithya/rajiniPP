@@ -1,1 +1,1 @@
-variables = {}
+__vars__ = {}
