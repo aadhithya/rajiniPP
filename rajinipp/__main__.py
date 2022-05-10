@@ -7,11 +7,8 @@ from typer import Typer
 
 from . import __version_str__
 from .lexer import Lexer
-from .parser import Parser
+from .parser.parser import Parser
 from .utils import read_yml
-
-logger.remove()
-logger.add(sys.stderr, level="INFO")
 
 app = Typer()
 
@@ -38,7 +35,12 @@ def tokenize(file_path: str):
 
 
 @app.command()
-def run(file_path: str):
+def run(file_path: str, debug: bool = False):
+
+    level = "DEBUG" if debug else "INFO"
+    logger.remove()
+    logger.add(sys.stderr, level=level)
+
     with open(file_path, "r") as f:
         input_text = f.read()
 
