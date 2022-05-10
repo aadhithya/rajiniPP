@@ -1,6 +1,9 @@
 # rajini++
+<p align="center">
+<img width=256 src="https://user-images.githubusercontent.com/6749212/167663396-3030d334-ebde-4b0e-939b-ff48e146f488.png"/>
+</p>
 
-rajini++ (rajinipp, rajiniPP) is a hobby programming language based on the iconic dialogues of Rajinikanth.
+rajini++ (rajiniPP) is a programming language is a tribute to the one and only superstar and based on the iconic dialogues of Rajinikanth. This is a hobby project ans is not meant to be used for serious software development.
 
 This project is inspired by the [ArnoldC](https://github.com/lhartikk/ArnoldC) project.
 
@@ -13,7 +16,7 @@ right now, the only way to get rajini++ is to clone the repository and build you
 - install rajini++: `pip install dist/rajinipp-0.0.1-py3-none-any.whl`
 - test installation: `rajinipp version`
 
-## The rajini++ language
+## Getting started
 
 rajini++ is not a feature rich language and is not intended for serious use. It is rather a hobby project and a tribute to the one and only superstar.
 
@@ -28,8 +31,8 @@ will result in the following output:
 
 ![hello world output](./imgs/hello-out.png)
 
-## Learn more about rajini++
-- To learn about all the features supported by rajini++ and the rajinipp interpreter, head to the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/rajiniPP)!
+## The rajini++ Documentation
+- The documentation for rajini++, the language can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
 
 
 ## Roadmap
