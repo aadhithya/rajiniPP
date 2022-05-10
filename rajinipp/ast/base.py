@@ -1,9 +1,6 @@
-import pdb
 from abc import ABC, abstractclassmethod
 
-from loguru import logger
-
-from ..__rajiniworld__ import variables
+from ..__rajiniworld__ import __vars__
 
 
 class Node(ABC):
@@ -40,7 +37,7 @@ class Word(Node):
         return self.value.value
 
     def eval(self):
-        return variables[self.name].eval()
+        return __vars__[self.name].eval()
 
 
 class Print(Node):
@@ -65,15 +62,27 @@ class Statement(Node):
         return self.value.eval()
 
 
-class Assignment(Node):
+class VarDeclare(Node):
     def __init__(self, var, value) -> None:
         super().__init__()
         self.var = var
         self.value = value
-        variables[var.name] = self
+        __vars__[var.name] = self
 
     def eval(self):
         return self.value.eval()
+
+
+class VarAssign(Node):
+    def __init__(self, var, value) -> None:
+        super().__init__()
+        self.var = var
+        self.value = value
+
+    def eval(self):
+        if self.var.name not in __vars__:
+            raise NameError(f"variable {self.var.name} does not exist.")
+        __vars__[self.var.name] = self.value
 
 
 class Expression(Node):
