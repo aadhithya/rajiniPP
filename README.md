@@ -15,15 +15,7 @@ right now, the only way to get rajini++ is to clone the repository and build you
 
 ## The rajini++ language
 
-rajini++ is not a feature rich language, it is rather a hobby language and a tribute to the one and only super star.
-
-### Main Method
-All rajini++ codes exist within the main method. The form is:
-```
-LAKSHMI START
-[code statements]
-KATHAM KATHAM
-```
+rajini++ is not a feature rich language and is not intended for serious use. It is rather a hobby project and a tribute to the one and only superstar.
 
 ### The `hello_world.rpp` program
 The Print function is summoned by using the `DOT` command.
@@ -36,11 +28,8 @@ will result in the following output:
 
 ![hello world output](./imgs/hello-out.png)
 
-
-- **Note**: All raniji++ statements terminate with a semicolon!
-
-### Running a rajini++ script
-- the rajini++ scripts(`.rpp`) can be run using the following command: `rajinipp run path/to/file./rpp`
+## Learn more about rajini++
+- To learn about all the features supported by rajini++ and the rajinipp interpreter, head to the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/rajiniPP)!
 
 
 ## Roadmap
@@ -50,7 +39,7 @@ will result in the following output:
   - [x] MOD
 - [x] Unary Ops
 - [x] print multiple objects with the same statement.
-- [x] variable assignment
+- [x] variable declaration
 - [x] variable access
 - [ ] variable manipulation
 - [ ] conditional expressions
