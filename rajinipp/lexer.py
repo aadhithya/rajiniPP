@@ -15,6 +15,7 @@ class Lexer:
 
         # * ignore spaces
         self._lexer.ignore(r"\s+")
+        self._lexer.ignore(r"!!.*\n")
 
     def get_lexer(self):
         """builds and returns lexer."""
