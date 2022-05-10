@@ -25,7 +25,7 @@ The Print function is summoned by using the `DOT` command.
 ```
 LAKSHMI START
 DOT "Hello, world!";
-KATHAM KATHAM
+MAGIZHCHI
 ```
 will result in the following output:
 
@@ -44,7 +44,8 @@ will result in the following output:
 - [x] print multiple objects with the same statement.
 - [x] variable declaration
 - [x] variable access
-- [ ] variable manipulation
+- [x] variable manipulation
+- [ ] bool data type
 - [ ] conditional expressions
 - [ ] if statement
 - [ ] if-else statement
