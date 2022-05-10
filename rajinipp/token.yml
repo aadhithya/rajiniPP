@@ -11,6 +11,10 @@ SUB: \-
 MUL: \*
 DIV: \/
 MOD: \%
+
+BOOL_TRUE: "True"
+BOOL_FALSE: "False"
+
 ASSIGN_ALT: \=
 DECLARE_ALT: ":="
 # COMMA: \,
