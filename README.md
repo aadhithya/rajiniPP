@@ -31,8 +31,10 @@ will result in the following output:
 
 ![hello world output](./imgs/hello-out.png)
 
-## The rajini++ Documentation
-- The documentation for rajini++, the language can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
+## Resources
+- **The rajini++ Documentation**: The documentation for rajini++, the language can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
+- **The rajini++ Language Spec**: The rajini++ commands and its equivalent in python3 can be found at the [rajiniPP Language Spec](https://github.com/aadhithya/rajiniPP/wiki/) wiki.
+- **The rajinipp Interpreter Documentation**: The documentation for the rajinipp interpreter can be found [here](https://github.com/aadhithya/rajiniPP/wiki/).
 
 
 ## Roadmap
@@ -45,11 +47,14 @@ will result in the following output:
 - [x] variable declaration
 - [x] variable access
 - [x] variable manipulation
-- [ ] bool data type
-- [ ] conditional expressions
+- [x] bool data type
+- [x] float datatype
+- [x] logical ops
 - [ ] if statement
 - [ ] if-else statement
 - [ ] for loop
 - [ ] while loop
 - [ ] rpp in python integration
 - [ ] void functions
+- [ ] number functions
+- [ ] string functions
