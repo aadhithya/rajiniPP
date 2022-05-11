@@ -18,8 +18,8 @@ class VariableParser:
             return VarDeclare(p[1], p[3])
 
         @pg.production("statement : variable ASSIGN expression SEMI_COLON")
-        @pg.production(
-            "statement : variable ASSIGN_ALT expression SEMI_COLON"
-        )
+        # @pg.production(
+        #     "statement : variable ASSIGN_ALT expression SEMI_COLON"
+        # )
         def assign_var_expr(p):
             return VarAssign(p[0], p[2])
