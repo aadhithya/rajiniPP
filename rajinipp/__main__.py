@@ -15,11 +15,13 @@ app = Typer()
 
 @app.command()
 def version():
+    """prints version and exits."""
     print(__version_str__)
 
 
 @app.command()
 def tokenize(file_path: str):
+    """prints the tokens from the program."""
     with open(file_path, "r") as f:
         input_text = f.read()
 
@@ -36,6 +38,7 @@ def tokenize(file_path: str):
 
 @app.command()
 def run(file_path: str, debug: bool = False):
+    """executes a rajini++ program."""
 
     level = "DEBUG" if debug else "INFO"
     logger.remove()
