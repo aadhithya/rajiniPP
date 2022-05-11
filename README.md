@@ -33,12 +33,15 @@ will result in the following output:
 
 ## Resources
 - **The rajini++ Documentation**: The documentation for rajini++, the language can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
-- **The rajini++ Language Spec**: The rajini++ commands and its equivalent in python3 can be found at the [rajiniPP Language Spec](https://github.com/aadhithya/rajiniPP/wiki/) wiki.
-- **The rajinipp Interpreter Documentation**: The documentation for the rajinipp interpreter can be found [here](https://github.com/aadhithya/rajiniPP/wiki/).
+- **The rajini++ Language Spec**: The rajini++ commands and its equivalent in python3 can be found at the [rajiniPP Language Spec](https://github.com/aadhithya/rajiniPP/wiki/rajiniPP:-Language-Specification) wiki.
+- **The rajinipp Interpreter Documentation**: The documentation for the rajinipp interpreter can be found [here](https://github.com/aadhithya/rajiniPP/wiki/rajinipp:-The-interpreter).
 
 
 ## Roadmap
+### rajini++ Features
 - [x] Math Ops
+  - [x] SUM
+  - [x] SUB
   - [x] MUL
   - [x] DIV
   - [x] MOD
@@ -54,7 +57,16 @@ will result in the following output:
 - [ ] if-else statement
 - [ ] for loop
 - [ ] while loop
-- [ ] rpp in python integration
 - [ ] void functions
 - [ ] number functions
 - [ ] string functions
+
+### rajinipp package
+- [ ] expose rajinipp python apis:
+  - [ ] `rajinipp.api.require`: load rajini++ code into python program.
+  - [ ] `rajinipp.api.eval`:
+    - [ ] eval rajini++ statement in python scripts.
+    - [ ] eval function calls from loaded rajini++ code and return output.
+
+### General
+- [ ] Add tests.
