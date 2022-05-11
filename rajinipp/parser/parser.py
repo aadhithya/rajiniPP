@@ -6,6 +6,7 @@ from rply import ParserGenerator
 from ..ast.blocks import MainBlock
 from .atom_parser import AtomParser
 from .expr_parser import ExpressionParser
+from .ops_parser import BinaryLogicalOpsParser, BinaryMathOpsParser
 from .print_parser import PrintParser
 from .stmt_parser import StatementParser
 from .var_parser import VariableParser
@@ -17,6 +18,8 @@ class Parser:
             tokens=tokens,
             precedence=[
                 ("left", ["NOOP"]),
+                ("left", ["LOGICOP"]),
+                ("left", ["MATHOP"]),
                 ("left", ["SUM", "SUB"]),
                 ("left", ["MUL", "DIV", "MOD"]),
             ],
@@ -25,6 +28,8 @@ class Parser:
         self.parsers = [
             StatementParser(),
             ExpressionParser(),
+            BinaryMathOpsParser(),
+            BinaryLogicalOpsParser(),
             PrintParser(),
             VariableParser(),
             AtomParser(),
