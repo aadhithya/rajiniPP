@@ -3,13 +3,13 @@ from loguru import logger
 from .base import Node
 
 
-class UnaryOp(Node):
+class UnaryOpBase(Node):
     def __init__(self, value) -> None:
         super().__init__()
         self.value = value
 
 
-class UnarySum(UnaryOp):
+class UnarySum(UnaryOpBase):
     def __init__(self, value) -> None:
         super().__init__(value)
 
@@ -17,7 +17,7 @@ class UnarySum(UnaryOp):
         return float(self.value.eval())
 
 
-class UnarySub(UnaryOp):
+class UnarySub(UnaryOpBase):
     def __init__(self, value) -> None:
         super().__init__(value)
 
@@ -25,33 +25,81 @@ class UnarySub(UnaryOp):
         return float(-self.value.eval())
 
 
-class BinaryOp(Node):
+class BinaryOpBase(Node):
     def __init__(self, left, right) -> None:
         super().__init__()
         self.left = left
         self.right = right
 
 
-class Sum(BinaryOp):
+class Sum(BinaryOpBase):
     def eval(self):
         return self.left.eval() + self.right.eval()
 
 
-class Sub(BinaryOp):
+class Sub(BinaryOpBase):
     def eval(self):
         return self.left.eval() - self.right.eval()
 
 
-class Mul(BinaryOp):
+class Mul(BinaryOpBase):
     def eval(self):
         return self.left.eval() * self.right.eval()
 
 
-class Div(BinaryOp):
+class Div(BinaryOpBase):
     def eval(self):
         return self.left.eval() / self.right.eval()
 
 
-class Mod(BinaryOp):
+class Mod(BinaryOpBase):
     def eval(self):
         return self.left.eval() % self.right.eval()
+
+
+class LogicalGT(BinaryOpBase):
+    def __init__(self, left, right) -> None:
+        super().__init__(left, right)
+
+    def eval(self):
+        return self.left.eval() > self.right.eval()
+
+
+class LogicalGTE(BinaryOpBase):
+    def __init__(self, left, right) -> None:
+        super().__init__(left, right)
+
+    def eval(self):
+        return self.left.eval() >= self.right.eval()
+
+
+class LogicalLT(BinaryOpBase):
+    def __init__(self, left, right) -> None:
+        super().__init__(left, right)
+
+    def eval(self):
+        return self.left.eval() < self.right.eval()
+
+
+class LogicalLTE(BinaryOpBase):
+    def __init__(self, left, right) -> None:
+        super().__init__(left, right)
+
+    def eval(self):
+        return self.left.eval() <= self.right.eval()
+
+
+class LogicalEQ(BinaryOpBase):
+    def __init__(self, left, right) -> None:
+        super().__init__(left, right)
+
+    def eval(self):
+        return self.left.eval() == self.right.eval()
+
+
+class LogicalNEQ(BinaryOpBase):
+    def __init__(self, left, right) -> None:
+        super().__init__(left, right)
+
+    def eval(self):
+        return self.left.eval() != self.right.eval()
