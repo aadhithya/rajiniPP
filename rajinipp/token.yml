@@ -6,23 +6,33 @@ PRINT: "DOT"
 # OPEN_PAREN: \(
 # CLOSE_PAREN: \)
 SEMI_COLON: \;
+
+###* VARS *###
+NUMBER: \d+(:?\.\d+)?
+WORD: "[a-z]+"
+STRING: \".*?\"
+BOOL_TRUE: "True"
+BOOL_FALSE: "False"
+
+###* MATH OPS *###
 SUM: \+
 SUB: \-
 MUL: \*
 DIV: \/
 MOD: \%
-
-BOOL_TRUE: "True"
-BOOL_FALSE: "False"
-
-ASSIGN_ALT: \=
-DECLARE_ALT: ":="
 # COMMA: \,
 
+###* LOGICAL OPS *###
+GT: ">(?!=)"
+LT: "<(?!=)"
+GTE: ">="
+LTE: "<="
+EQ: "=="
+NEQ: "!="
+
+###* rajini++ commands *###
 START_DECLARE: "AANDAVAN SOLLRAN"
 DECLARE: "ARUNACHALAM SEIYARAN"
 ASSIGN: "BHAJJI SAAPDU"
-
-NUMBER: \d+
-WORD: "[a-z]+"
-STRING: \".*?\"
+# ASSIGN_ALT: \=
+DECLARE_ALT: ":="
