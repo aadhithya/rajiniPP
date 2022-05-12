@@ -5,6 +5,7 @@ from rply import ParserGenerator
 
 from ..ast.blocks import MainBlock
 from .atom_parser import AtomParser
+from .cond_parser import ConditionalParser
 from .expr_parser import ExpressionParser
 from .ops_parser import BinaryLogicalOpsParser, BinaryMathOpsParser
 from .print_parser import PrintParser
@@ -30,6 +31,7 @@ class Parser:
             ExpressionParser(),
             BinaryMathOpsParser(),
             BinaryLogicalOpsParser(),
+            ConditionalParser(),
             PrintParser(),
             VariableParser(),
             AtomParser(),
