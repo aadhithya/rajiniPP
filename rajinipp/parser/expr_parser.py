@@ -10,12 +10,23 @@ class ExpressionParser:
         @pg.production(
             "expression : expression mathop expression", precedence="MATHOP"
         )
+        def binary_arith_expr(p):
+            logger.debug("Parser --> expression")
+            left = p[0]
+            right = p[2]
+            OpNode = p[1]
+
+            return OpNode(left, right)
+
         @pg.production(
             "expression : expression logicalop expression",
             precedence="LOGICOP",
         )
-        def binary_expr(p):
-            logger.debug("Parser --> expression")
+        @pg.production(
+            "logical_expression : expression logicalop expression",
+            precedence="LOGICOP",
+        )
+        def binary_logical_op(p):
             left = p[0]
             right = p[2]
             OpNode = p[1]
