@@ -53,7 +53,7 @@ will result in the following output:
 - [x] bool data type
 - [x] float datatype
 - [x] logical ops
-- [ ] if statement
+- [x] if statement
 - [ ] if-else statement
 - [ ] for loop
 - [ ] while loop
