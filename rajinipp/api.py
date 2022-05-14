@@ -11,7 +11,7 @@ from pathlib import Path
 from loguru import logger
 
 from .lexer import Lexer
-from .parser import Parser
+from .parser.parser import Parser
 from .utils import read_yml
 
 

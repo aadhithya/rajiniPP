@@ -1,0 +1,17 @@
+LAKSHMI START
+!! addition operation
+AANDAVAN SOLLRAN addvar ARUNACHALAM SEIYARAN 25 + 15;
+!! subtraction operation
+AANDAVAN SOLLRAN subvar ARUNACHALAM SEIYARAN 25 - 15;
+!! multiplication operation
+AANDAVAN SOLLRAN mulvar ARUNACHALAM SEIYARAN 5 * 5;
+!! division operation
+AANDAVAN SOLLRAN divvar ARUNACHALAM SEIYARAN 5 / 5;
+!! modulo operation
+AANDAVAN SOLLRAN modvar ARUNACHALAM SEIYARAN 51 % 5;
+DOT "addvar = " addvar;
+DOT "subvar = " subvar;
+DOT "mulvar = " mulvar;
+DOT "divvar = " divvar;
+DOT "modvar = " modvar;
+MAGIZHCHI

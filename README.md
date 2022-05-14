@@ -20,16 +20,15 @@ right now, the only way to get rajini++ is to clone the repository and build you
 
 rajini++ is not a feature rich language and is not intended for serious use. It is rather a hobby project and a tribute to the one and only superstar.
 
-### The `hello_world.rpp` program
-The Print function is summoned by using the `DOT` command.
-```
-LAKSHMI START
-DOT "Hello, world!";
-MAGIZHCHI
-```
+### Run programs
+- Run the `hello_world.rpp` program:
+
+  `rajinipp run examples/hello_world.rpp`
 will result in the following output:
 
 ![hello world output](./imgs/hello-out.png)
+
+
 
 ## Resources
 - **The rajini++ Documentation**: The documentation for rajini++, the language can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
@@ -69,4 +68,4 @@ will result in the following output:
     - [ ] eval function calls from loaded rajini++ code and return output.
 
 ### General
-- [ ] Add tests.
+- [x] Add tests.
