@@ -29,7 +29,8 @@ rajinipp = "rajinipp.__main__:app"
 
 [tool.semantic_release]
 version_variable = [
-    "pyproject.toml:version"
+    "pyproject.toml:version",
+    "rajinipp/__init__.py:__version__"
 ]
 branch = "setup-actions"
 upload_to_pypi = false
