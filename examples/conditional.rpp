@@ -1,0 +1,23 @@
+LAKSHMI START
+
+AANDAVAN SOLLRAN x ARUNACHALAM SEIYARAN 15;
+
+!! if statement.
+DOT "Example: If Statement";
+EN PEAR MANICKAM x > 10{
+    DOT "x (" x ") is larger than 10!";
+} KATHAM KATHAM;
+
+DOT "";
+
+!! Nested if statement.
+DOT "Example: Nested If Condition";
+EN PEAR MANICKAM x > 14{
+    DOT "Outer if statement";
+    EN PEAR MANICKAM x == 15{
+        DOT "Inner if statement.";
+        DOT "x (" x ") is equal to 15!";
+    } KATHAM KATHAM;
+} KATHAM KATHAM;
+
+MAGIZHCHI

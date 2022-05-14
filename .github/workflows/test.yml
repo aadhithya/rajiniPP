@@ -1,0 +1,91 @@
+name: Code Quality and Tests
+
+on: [push, pull_request]
+
+env:
+  PYTHON_VERSION: "3.8.5"
+  PROJECT_FOLDER: ./rajinipp
+  TEST_FOLDER: tests
+  COVERAGE_LIMIT: 60
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{env.PYTHON_VERSION}}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry && poetry install
+
+      - name: Lint with flake8
+        uses: ricardochaves/python-lint@v1.4.0
+        with:
+          python-root-list: ${{env.PROJECT_FOLDER}}
+          use-pylint: false
+          use-pycodestyle: false
+          use-flake8: true
+          use-black: false
+          use-mypy: false
+          use-isort: false
+
+          extra-flake8-options: "--max-line-length 79 --max-complexity 15 --config .flake8"
+
+      - name: Black formatting check
+        uses: psf/black@stable
+        with:
+          options: "--line-length 79"
+          src: ${{env.PROJECT_FOLDER}}
+          version: "22.3.0"
+
+  code-coverage:
+    needs: code-quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{env.PYTHON_VERSION}}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry && poetry install
+
+      - name: Tests with pytest
+        run: |
+          poetry install
+          poetry run pytest ${{env.TEST_FOLDER}}  --cov-report=xml --cov=${{env.PROJECT_FOLDER}} --junitxml=./coverage.xml
+      - name: Code Coverage Summary Report
+        run: |
+          pip install coverage
+          coverage combine && coverage report --fail-under=${{env.COVERAGE_LIMIT}} -m
+          coverage html
+      - name: Archive code coverage html report
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report
+          path: htmlcov/index.html
+
+  build-test:
+    needs: code-coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{env.PYTHON_VERSION}}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          poetry config virtualenvs.create false
+          poetry build

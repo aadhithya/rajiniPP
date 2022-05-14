@@ -1,0 +1,25 @@
+LAKSHMI START
+!! This is a comment. This will be ignored by the interpreter.
+!! declaring x and y.
+AANDAVAN SOLLRAN x ARUNACHALAM SEIYARAN 5.5;
+AANDAVAN SOLLRAN y ARUNACHALAM SEIYARAN 15;
+AANDAVAN SOLLRAN a ARUNACHALAM SEIYARAN x;
+AANDAVAN SOLLRAN b ARUNACHALAM SEIYARAN y;
+DOT "This is Rajini++. Every command is a famous dialogues of Rajinikanth!";
+DOT "Addition Output:" x "+" y "=" x+y;
+DOT "Assigning new value to y. Setting y = 100";
+y BHAJJI SAAPDU 100;
+DOT "New y = " y;
+!! declaring a boolean variable.
+AANDAVAN SOLLRAN boolvar ARUNACHALAM SEIYARAN True;
+DOT "boolvar = " boolvar;
+!! testing logical ops
+DOT "x: " x "y: " y;
+DOT "a: " a "b: " b;
+DOT "x > y: " x > y;
+DOT "x >= y: " x >= y;
+DOT "x < y: " x < y;
+DOT "x <= y: " x <= y;
+DOT "x == a: " x == a;
+DOT "x != b: " x != b;
+MAGIZHCHI
