@@ -31,6 +31,6 @@ def exec(code: str):
 
     parser = parser.get_parser()
 
-    parsed = parser.parse(tokens)
+    parsed_tokens = parser.parse(tokens)
 
-    parsed.eval()
+    parsed_tokens.eval()
