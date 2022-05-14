@@ -62,6 +62,8 @@ jobs:
           python-version: ${{env.PYTHON_VERSION}}
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Python Semantic Release
         uses: aadhithya/py-semantic-release-action@master
         with:
