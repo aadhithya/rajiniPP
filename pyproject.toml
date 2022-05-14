@@ -32,8 +32,8 @@ version_variable = [
     "pyproject.toml:version",
     "rajinipp/__init__.py:__version__"
 ]
-branch = "setup-actions"
-upload_to_pypi = false
+branch = "master"
+upload_to_pypi = true
 upload_to_release = true
 build_command = "pip install poetry && poetry build"
 commit_subject = "Bump to {version}"
