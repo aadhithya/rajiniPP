@@ -27,3 +27,14 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 rajinipp = "rajinipp.__main__:app"
+
+[tool.semantic_release]
+version_variable = [
+    "pyproject.toml:version"
+]
+branch = "master"
+upload_to_pypi = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
+commit_subject = "Bump to {version}"
+commit_message = "Bump to {version}"
