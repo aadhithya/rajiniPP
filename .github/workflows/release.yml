@@ -65,6 +65,6 @@ jobs:
       - name: Python Semantic Release
         uses: aadhithya/py-semantic-release-action@master
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           repository_username: ${{ secrets.PYPI_USER }}
           repository_password: ${{ secrets.PYPI_SECRET }}
