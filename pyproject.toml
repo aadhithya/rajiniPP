@@ -13,7 +13,6 @@ loguru = "^0.6.0"
 typer = "^0.4.1"
 
 
-
 [tool.poetry.dev-dependencies]
 poetry = "^1.1.13"
 commitizen = "^2.24.0"
