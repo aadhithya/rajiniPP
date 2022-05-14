@@ -5,7 +5,7 @@ on:
 
 env:
   PYTHON_VERSION: "3.8.5"
-  PROJECT_FOLDER: ./rajnipp
+  PROJECT_FOLDER: ./rajinipp
   TEST_FOLDER: tests
 
 jobs:
