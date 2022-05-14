@@ -22,6 +22,7 @@ rajini++ is not a feature rich language and is not intended for serious use. It 
 - Run the `hello_world.rpp` program:
 
   `rajinipp run examples/hello_world.rpp`
+
 will result in the following output:
 
 ![hello world output](./imgs/hello-out.png)
