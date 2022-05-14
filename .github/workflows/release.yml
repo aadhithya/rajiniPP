@@ -52,7 +52,7 @@ jobs:
   Release:
     needs: Quality
     # https://github.community/t/how-do-i-specify-job-dependency-running-in-another-workflow/16482
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
@@ -61,7 +61,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Python Semantic Release
-        uses: relekang/python-semantic-release@master
+        uses: aadhithya/py-semantic-release-action@master
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           repository_username: ${{ secrets.PYPI_USER }}
