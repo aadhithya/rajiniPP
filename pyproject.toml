@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rajinipp"
-version = "0.1.1"
+version = "0.1.2"
 description = "Rajini++ (rajiniPP) is a programming language based on the iconic dialogues by Rajinikanth."
 authors = ["Aadhithya Sankar <a.sankar@tum.de>"]
 license = "MIT License"
