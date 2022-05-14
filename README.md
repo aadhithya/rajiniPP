@@ -6,11 +6,12 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aadhithya/rajiniPP/Test%20and%20Release?logo=Github%20Actions&logoColor=%23fff&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/aadhithya/rajiniPP?style=flat-square)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aadhithya/rajiniPP?logo=semantic%20release&style=flat-square)
 ![GitHub Release Date](https://img.shields.io/github/release-date/aadhithya/rajiniPP?logo=semantic%20release&style=flat-square)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rajinipp?logo=PyPI&logoColor=%23eaeaea&style=flat-square)
 ![PyPI - License](https://img.shields.io/pypi/l/rajinipp?style=flat-square)
 ![GitHub commits since latest release (by SemVer)](https://img.shields.io/github/commits-since/aadhithya/rajiniPP/latest/master?style=flat-square)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aadhithya/rajiniPP?logo=semantic%20release&style=flat-square)
+
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/asankar96?style=social)
 ![GitHub followers](https://img.shields.io/github/followers/aadhithya?style=social)
