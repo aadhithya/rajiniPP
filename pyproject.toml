@@ -32,7 +32,7 @@ rajinipp = "rajinipp.__main__:app"
 version_variable = [
     "pyproject.toml:version"
 ]
-branch = "master"
+branch = "setup-actions"
 upload_to_pypi = false
 upload_to_release = true
 build_command = "pip install poetry && poetry build"
