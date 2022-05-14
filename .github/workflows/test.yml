@@ -25,10 +25,12 @@ jobs:
 
       - name: Lint with flake8
         uses: py-actions/flake8@v2
+        run: ls
         with:
           ignore: "E203, E266, E501, W503, F403, E401, F401"
           max-line-length: "79"
-          path: ${{env.PROJECT_FOLDER}}
+          path: ./rajinipp
+          args: "--max-complexity 18"
 
       - name: Black formatting check
         uses: psf/black@stable
