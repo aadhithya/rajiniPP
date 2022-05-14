@@ -45,11 +45,6 @@ jobs:
           src: ${{env.PROJECT_FOLDER}}
           version: "22.3.0"
 
-      - name: Security Analysis with bandit
-        run: |
-          # stop pipeline if level 3 vulnerability found
-          poetry run bandit -r -lll ${{env.PROJECT_FOLDER}} ${{env.TEST_FOLDER}}
-
       - name: Test with pytest
         run: |
           poetry run python -m pytest -v ${{env.TEST_FOLDER}}
