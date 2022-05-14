@@ -10,6 +10,8 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rajinipp?logo=PyPI&logoColor=%23eaeaea&style=flat-square)
 ![PyPI - License](https://img.shields.io/pypi/l/rajinipp?style=flat-square)
 ![GitHub commits since latest release (by SemVer)](https://img.shields.io/github/commits-since/aadhithya/rajiniPP/latest/master?style=flat-square)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aadhithya/rajiniPP?logo=semantic%20release&style=flat-square)
+
 ![Twitter Follow](https://img.shields.io/twitter/follow/asankar96?style=social)
 ![GitHub followers](https://img.shields.io/github/followers/aadhithya?style=social)
 
