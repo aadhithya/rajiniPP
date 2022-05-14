@@ -1,22 +1,50 @@
 PGM_START: "LAKSHMI START"
-PGM_END: "KATHAM KATHAM"
+PGM_END: "MAGIZHCHI"
 
 PRINT: "DOT"
 
+###* Symbols *###
 # OPEN_PAREN: \(
 # CLOSE_PAREN: \)
 SEMI_COLON: \;
+L_BRACE: \{
+R_BRACE: \}
+
+###* VARS *###
+NUMBER: \d+(:?\.\d+)?
+WORD: "[a-z]+"
+STRING: \".*?\"
+BOOL_TRUE: "True"
+BOOL_FALSE: "False"
+
+###* MATH OPS *###
 SUM: \+
 SUB: \-
 MUL: \*
 DIV: \/
 MOD: \%
-EQUALS: \=
 # COMMA: \,
 
-START_ASSIGN: "AANDAVAN SOLLRAN"
-ASSIGN: "ARUNACHALAM SEIYARAN"
+###* LOGICAL OPS *###
+GT: ">(?!=)"
+LT: "<(?!=)"
+GTE: ">="
+LTE: "<="
+EQ: "=="
+NEQ: "!="
 
-NUMBER: \d+
-WORD: "[a-z]+"
-STRING: \".*?\"
+###* rajini++ commands *###
+START_DECLARE: "AANDAVAN SOLLRAN"
+DECLARE: "ARUNACHALAM SEIYARAN"
+ASSIGN: "BHAJJI SAAPDU"
+# ASSIGN_ALT: \=
+DECLARE_ALT: ":="
+
+###* Flow Control *###
+IF_COND: "EN PEAR MANICKAM"
+# ELSE_COND: "ENAKKU INNUR PEAR IRUKKU"
+# WHILE_LOOP: "BABA COUNTING STARTS"
+# FOR_START: "NAA"
+# FOR_RANGE_START: "SONNA"
+# FOR_RANGE_END" "THADAVE SONNA MADHRI"
+END_BLOCK: "KATHAM KATHAM"

@@ -7,22 +7,21 @@ from typer import Typer
 
 from . import __version_str__
 from .lexer import Lexer
-from .parser import Parser
+from .parser.parser import Parser
 from .utils import read_yml
-
-logger.remove()
-logger.add(sys.stderr, level="INFO")
 
 app = Typer()
 
 
 @app.command()
 def version():
+    """prints version and exits."""
     print(__version_str__)
 
 
 @app.command()
 def tokenize(file_path: str):
+    """prints the tokens from the program."""
     with open(file_path, "r") as f:
         input_text = f.read()
 
@@ -38,7 +37,13 @@ def tokenize(file_path: str):
 
 
 @app.command()
-def run(file_path: str):
+def run(file_path: str, debug: bool = False):
+    """executes a rajini++ program."""
+
+    level = "DEBUG" if debug else "INFO"
+    logger.remove()
+    logger.add(sys.stderr, level=level)
+
     with open(file_path, "r") as f:
         input_text = f.read()
 
