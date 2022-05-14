@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 env:
   PYTHON_VERSION: "3.8.5"
-  PROJECT_FOLDER: rajinipp
+  PROJECT_FOLDER: ./rajinipp
   TEST_FOLDER: tests
   COVERAGE_LIMIT: 60
 
