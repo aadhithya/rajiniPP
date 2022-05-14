@@ -8,12 +8,10 @@ rajini++ (rajiniPP) is a programming language is a tribute to the one and only s
 This project is inspired by the [ArnoldC](https://github.com/lhartikk/ArnoldC) project.
 
 ## Installation
-right now, the only way to get rajini++ is to clone the repository and build your own wheel. You need to have at least python 3.8 installed.
-- clone project: `git clone https://github.com/aadhithya/rajiniPP.git`
-- change directory to rajiniPP: `cd rajiniPP`
-- install poetry: `pip install poetry`
-- generate wheel: `poetry build`
-- install rajini++: `pip install dist/rajinipp-0.0.1-py3-none-any.whl`
+- rajinipp requires **python >= 3.8**. Install python from [here](https://www.python.org/downloads/).
+- Install the rajini++ interpreter using the following command:
+  `pip install rajinipp`
+
 - test installation: `rajinipp version`
 
 ## Getting started
@@ -31,7 +29,7 @@ will result in the following output:
 
 
 ## Resources
-- **The rajini++ Documentation**: The documentation for rajini++, the language can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
+- **Learn the rajini++ language**: The documentation for rajini++, the language can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
 - **The rajini++ Language Spec**: The rajini++ commands and its equivalent in python3 can be found at the [rajiniPP Language Spec](https://github.com/aadhithya/rajiniPP/wiki/rajiniPP:-Language-Specification) wiki.
 - **The rajinipp Interpreter Documentation**: The documentation for the rajinipp interpreter can be found [here](https://github.com/aadhithya/rajiniPP/wiki/rajinipp:-The-interpreter).
 
