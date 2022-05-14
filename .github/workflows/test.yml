@@ -1,4 +1,4 @@
-name: rajinipp Code Quality and Tests
+name: Code Quality and Tests
 
 on: [push, pull_request]
 
