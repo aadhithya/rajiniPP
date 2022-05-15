@@ -1,8 +1,6 @@
 from munch import Munch
 from rply import LexerGenerator
 
-from .utils import read_yml
-
 
 class Lexer:
     def __init__(self, tokens: Munch = None) -> None:
