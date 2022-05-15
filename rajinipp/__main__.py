@@ -36,11 +36,11 @@ def run(file_path: str, debug: bool = False):
 
 @app.command()
 def shell():
-    print(f"rajini++ v{__version__}")
+    print(f"rajini++ v{'0.2.0'}")
     while True:
         code_line = input("rajinipp>> ")
         output = runner.eval(code_line)
-        if output:
+        if output is not None:
             print(output)
 
 
