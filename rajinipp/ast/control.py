@@ -25,3 +25,18 @@ class IfElseCondition(Node):
             return self.true_value.eval()
         else:
             return self.false_value.eval()
+
+
+class ForLoop(Node):
+    def __init__(self, range_start, range_end, stmts) -> None:
+        super().__init__()
+        self.range_start = range_start
+        self.range_end = range_end
+        self.stmts = stmts
+
+    def eval(self):
+        st = int(self.range_start.eval())
+        end = int(self.range_end.eval())
+        for _ in range(st, end):
+            self.stmts.eval()
+        return
