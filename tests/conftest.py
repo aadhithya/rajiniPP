@@ -27,7 +27,7 @@ def multi_print():
 
 @pytest.fixture
 def cond_code():
-    return read_file(os.path.join(rpp_dir, "conditional.rpp"))
+    return read_file(os.path.join(rpp_dir, "if_conditional.rpp"))
 
 
 @pytest.fixture
@@ -38,3 +38,8 @@ def logic_code():
 @pytest.fixture
 def math_code():
     return read_file(os.path.join(rpp_dir, "math_ops.rpp"))
+
+
+@pytest.fixture
+def if_else_code():
+    return read_file(os.path.join(rpp_dir, "if_else_conditional.rpp"))
