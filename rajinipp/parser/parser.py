@@ -7,8 +7,8 @@ from rply import ParserGenerator
 from ..ast.base import Expression, Print
 from ..ast.blocks import MainBlock
 from .atom_parser import AtomParser
-from .cond_parser import ConditionalParser
 from .expr_parser import ExpressionParser
+from .flow_parser import ConditionalParser, LoopParser
 from .ops_parser import BinaryLogicalOpsParser, BinaryMathOpsParser
 from .print_parser import PrintParser
 from .stmt_parser import StatementParser
@@ -34,6 +34,7 @@ class ParserBase:
             BinaryMathOpsParser(),
             BinaryLogicalOpsParser(),
             ConditionalParser(),
+            LoopParser(),
             PrintParser(),
             VariableParser(),
             AtomParser(),
@@ -73,6 +74,8 @@ class LineParser(ParserBase):
         # * remove StatementParser. We will build our own here.
         self.parsers.pop(0)
         # * remove ConditionalParser. Line Parser will not support it yet.
+        self.parsers.pop(3)
+        # * remove LoopParser. Line Parser will not support it yet.
         self.parsers.pop(3)
 
     def parse(self):
