@@ -7,6 +7,7 @@ class AtomParser:
     """parse all atomic components."""
 
     def parse(self, pg):
+        @pg.production("forvar : NUMBER")
         @pg.production("expression : NUMBER")
         def number_expr(p):
             logger.debug("Parser --> number")
@@ -22,6 +23,7 @@ class AtomParser:
             logger.debug("Parser --> string")
             return String(p[0].value)
 
+        @pg.production("forvar : WORD")
         @pg.production("expression : WORD")
         @pg.production("variable : WORD")
         def word_expr(p):
