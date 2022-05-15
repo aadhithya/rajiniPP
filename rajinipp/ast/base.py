@@ -97,10 +97,10 @@ class VarAssign(Node):
         __vars__[self.var.name] = self.value
 
 
-class Expression(Node):
-    def __init__(self, value) -> None:
-        super().__init__()
-        self.value = value
+# class Expression(Node):
+#     def __init__(self, value) -> None:
+#         super().__init__()
+#         self.value = value
 
-    def eval(self):
-        return self.value.eval()
+#     def eval(self):
+#         return self.value.eval()
