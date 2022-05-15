@@ -43,3 +43,8 @@ def math_code():
 @pytest.fixture
 def if_else_code():
     return read_file(os.path.join(rpp_dir, "if_else_conditional.rpp"))
+
+
+@pytest.fixture
+def for_loop_code():
+    return read_file(os.path.join(rpp_dir, "for_loop.rpp"))
