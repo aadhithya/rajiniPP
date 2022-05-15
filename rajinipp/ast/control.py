@@ -1,3 +1,4 @@
+from ..execptions import BreakException
 from .base import Node
 
 
@@ -35,8 +36,38 @@ class ForLoop(Node):
         self.stmts = stmts
 
     def eval(self):
-        st = int(self.range_start.eval())
-        end = int(self.range_end.eval())
-        for _ in range(st, end):
-            self.stmts.eval()
+        # * we surround with try-catch block to support break command.
+        try:
+            st = int(self.range_start.eval())
+            end = int(self.range_end.eval())
+            for _ in range(st, end):
+                self.stmts.eval()
+        except BreakException:
+            pass
         return
+
+
+class WhileLoop(Node):
+    def __init__(self, condition, stmts) -> None:
+        super().__init__()
+        self.condition = condition
+        self.stmts = stmts
+
+    def eval(self):
+        # * we surround with try-catch block to support break command.
+        try:
+            while self.condition.eval():
+                self.stmts.eval()
+        except BreakException:
+            pass
+        return
+
+
+class Break(Node):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def eval(self):
+        raise BreakException(
+            "BLACK SHEEP(break command) can be issued only inside loops!!"
+        )
