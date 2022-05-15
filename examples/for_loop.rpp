@@ -1,0 +1,12 @@
+LAKSHMI START
+!! for loop example
+DOT "For Loop Example";
+AANDAVAN SOLLRAN x ARUNACHALAM SEIYARAN 5;
+DOT "Before loop: X =" x;
+DOT "Running loop from 1...10";
+NAA 1 THADAVA SONNA 10 THADAVA SONNA MADHRI{
+    x BHAJJI SAAPDU x + 1;
+
+}KATHAM KATHAM;
+DOT "After loop: X =" x;
+MAGIZHCHI
