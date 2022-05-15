@@ -4,17 +4,17 @@
 
 
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aadhithya/rajiniPP/Test%20and%20Release?logo=Github%20Actions&logoColor=%23fff&style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/aadhithya/rajiniPP?style=flat-square)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aadhithya/rajiniPP?logo=semantic%20release&style=flat-square)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aadhithya/rajiniPP/Test%20and%20Release?logo=Github%20Actions&logoColor=%23fff&style=flat-square)](https://github.com/aadhithya/rajiniPP/actions/workflows/release.yml)
+[![GitHub issues](https://img.shields.io/github/issues/aadhithya/rajiniPP?style=flat-square)](https://github.com/aadhithya/rajiniPP/issues)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aadhithya/rajiniPP?logo=semantic%20release&style=flat-square)](https://pypi.org/project/rajinipp/)
 ![GitHub Release Date](https://img.shields.io/github/release-date/aadhithya/rajiniPP?logo=semantic%20release&style=flat-square)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rajinipp?logo=PyPI&logoColor=%23eaeaea&style=flat-square)
 ![PyPI - License](https://img.shields.io/pypi/l/rajinipp?style=flat-square)
 ![GitHub commits since latest release (by SemVer)](https://img.shields.io/github/commits-since/aadhithya/rajiniPP/latest/master?style=flat-square)
 
 
-![Twitter Follow](https://img.shields.io/twitter/follow/asankar96?style=social)
-![GitHub followers](https://img.shields.io/github/followers/aadhithya?style=social)
+[![Twitter Follow](https://img.shields.io/twitter/follow/asankar96?style=social)](https://twitter.com/asankar96)
+[![GitHub followers](https://img.shields.io/github/followers/aadhithya?style=social)](https://github.com/aadhithya)
 
 
 rajini++ (rajiniPP) is a programming language is a tribute to the one and only superstar and based on the iconic dialogues of Rajinikanth. This is a hobby project ans is not meant to be used for serious software development.
