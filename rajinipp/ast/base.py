@@ -49,7 +49,7 @@ class Word(Node):
         return self.value.value
 
     def eval(self):
-        return __vars__[self.name].eval()
+        return __vars__[self.name]
 
 
 class Print(Node):
@@ -79,9 +79,10 @@ class VarDeclare(Node):
         super().__init__()
         self.var = var
         self.value = value
-        __vars__[var.name] = self
 
     def eval(self):
+        # * save just the variable values instead of the node.
+        __vars__[self.var.name] = self.value.eval()
         return self.value.eval()
 
 
@@ -94,7 +95,7 @@ class VarAssign(Node):
     def eval(self):
         if self.var.name not in __vars__:
             raise NameError(f"variable {self.var.name} does not exist.")
-        __vars__[self.var.name] = self.value
+        __vars__[self.var.name] = self.value.eval()
 
 
 class Expression(Node):
