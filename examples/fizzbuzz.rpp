@@ -1,0 +1,24 @@
+LAKSHMI START
+
+!! declare variables
+AANDAVAN SOLLRAN ix ARUNACHALAM SEIYARAN 1;
+AANDAVAN SOLLRAN range ARUNACHALAM SEIYARAN 16;
+
+NAA 1 THADAVA SONNA range THADAVA SONNA MADHRI{
+    EN PEAR MANICKAM ix%15==0{
+        DOT "FizzBuzz";
+    } ENAKKU INNURU PEAR IRUKKU{
+        EN PEAR MANICKAM ix%3==0{
+            DOT "Fizz";
+        } ENAKKU INNURU PEAR IRUKKU{
+            EN PEAR MANICKAM ix%5==0{
+                DOT "Buzz";
+            } ENAKKU INNURU PEAR IRUKKU{
+                DOT ix;
+            }KATHAM KATHAM;
+        }KATHAM KATHAM;
+    }KATHAM KATHAM;
+    ix BHAJJI SAAPDU ix + 1;
+!! End Loop
+}KATHAM KATHAM;
+MAGIZHCHI
