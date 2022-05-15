@@ -17,3 +17,9 @@ def test_for_loop(for_loop_code, capsys):
     runner.exec(for_loop_code)
     out, err = capsys.readouterr()
     assert "After loop: X = 14.0" in out.strip()
+
+
+def test_while_loop(while_loop_code, capsys):
+    runner.exec(while_loop_code)
+    out, err = capsys.readouterr()
+    assert "breaking out of loop..." in out.strip()
