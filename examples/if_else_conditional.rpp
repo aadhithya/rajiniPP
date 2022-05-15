@@ -1,0 +1,15 @@
+LAKSHMI START
+
+AANDAVAN SOLLRAN x ARUNACHALAM SEIYARAN 5;
+
+
+DOT "Example: If-Else Statement";
+!! if statement.
+EN PEAR MANICKAM x > 10{
+    DOT "x (" x ") is larger than 10!";
+} !! else statement.
+ENAKKU INNURU PEAR IRUKKU{
+    DOT "x (" x ") is less than 10!";
+} KATHAM KATHAM;
+
+MAGIZHCHI
