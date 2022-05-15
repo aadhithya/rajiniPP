@@ -33,6 +33,12 @@ rajini++ (rajiniPP) is a programming language is a tribute to the one and only s
 rajini++ is not a feature rich language and is not intended for serious use. It is rather a hobby project and a tribute to the one and only superstar.
 
 ### Run programs
+`hello_world.rpp`:
+```
+LAKSHMI START
+DOT "Hello, World!";
+MAGIZHCHI
+```
 - Run the `hello_world.rpp` program:
 
   `rajinipp run examples/hello_world.rpp`
@@ -44,7 +50,7 @@ will result in the following output:
 
 
 ## Resources
-- **Learn the rajini++ language**: 
+- **Learn the rajini++ language**:
   -  **The rajini++ language documentation** can be found at the [rajiniPP Wiki](https://github.com/aadhithya/rajiniPP/wiki/).
   -  Example programs can be found here: [Example Programs](https://github.com/aadhithya/rajiniPP/tree/master/examples).
 - **The rajini++ Language Spec**: The rajini++ commands and its equivalent in python3 can be found at the [rajiniPP Language Spec](https://github.com/aadhithya/rajiniPP/wiki/rajiniPP:-Language-Specification) wiki.
@@ -54,7 +60,7 @@ will result in the following output:
 ## Acknowledgements
 - A lot of learnings from [DIVSPL](https://github.com/di/divspl) and its accompanying [pycon talk](https://www.youtube.com/watch?v=ApgUrtCrmV8).
 - A lot of learnings from [this pycon talk](https://www.youtube.com/watch?v=LCslqgM48D4&t=1388s) by [Alex Gaynor](alex).
-- Workflows setup based on [poetry_project_template](https://github.com/a-parida12/poetry_pypi_template).
+- Workflows setup based on [poetry_pypi_template](https://github.com/a-parida12/poetry_pypi_template).
 - This project is inspired by the [ArnoldC](https://github.com/lhartikk/ArnoldC) project.
 
 
