@@ -48,3 +48,8 @@ def if_else_code():
 @pytest.fixture
 def for_loop_code():
     return read_file(os.path.join(rpp_dir, "for_loop.rpp"))
+
+
+@pytest.fixture
+def while_loop_code():
+    return read_file(os.path.join(rpp_dir, "while_loop.rpp"))
