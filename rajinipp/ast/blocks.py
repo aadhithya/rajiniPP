@@ -1,3 +1,5 @@
+# from loguru import logger
+
 from .base import Node, Statement
 
 
@@ -37,3 +39,25 @@ class MainBlock(Node):
 
     def eval(self):
         return self.statements.eval()
+
+
+class FunctionsBlock(Node):
+    def __init__(self, functions=None, function=None) -> None:
+        super().__init__()
+        self.functions = functions
+        self.function = function
+
+    def eval(self):
+        if self.functions:
+            return self.functions.eval() + [self.function.eval()]
+        return []
+
+
+class ProgramBlock(Node):
+    def __init__(self, functions, main) -> None:
+        super().__init__()
+        self.functions = functions
+        self.main = main
+
+    def eval(self):
+        return self.functions.eval() + [self.main.eval()]
