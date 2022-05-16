@@ -53,3 +53,13 @@ def for_loop_code():
 @pytest.fixture
 def while_loop_code():
     return read_file(os.path.join(rpp_dir, "while_loop.rpp"))
+
+
+@pytest.fixture
+def fn_code():
+    return read_file(os.path.join(rpp_dir, "functions_no_args.rpp"))
+
+
+@pytest.fixture
+def fn_return_code():
+    return read_file(os.path.join(rpp_dir, "function_return.rpp"))
