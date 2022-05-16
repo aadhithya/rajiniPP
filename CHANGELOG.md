@@ -2,6 +2,41 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.0 (2022-05-16)
+### Feature
+* **flow_parser.py:** Add support for while loops and break statement ([`67feeed`](https://github.com/aadhithya/rajiniPP/commit/67feeedc2582e238eaa180dea7eb57b8c5532ca2))
+* **exceptions.py:** Add exception to handle break statements ([`89cb89f`](https://github.com/aadhithya/rajiniPP/commit/89cb89f12140f686a3596731a9de97540ec516d2))
+* **token.yml:** Allow while loop and break tokens ([`bb4ee89`](https://github.com/aadhithya/rajiniPP/commit/bb4ee895588ec4896a832d6d0e28d8aebca74620))
+* **control.py:** Support while loop and break nodes ([`2011db1`](https://github.com/aadhithya/rajiniPP/commit/2011db19520d0a7b764c13b3d1df28217e08f709))
+* **ParserBase:** Add support for for loops ([`70a49d3`](https://github.com/aadhithya/rajiniPP/commit/70a49d3427fd261f48db420d684a79ec0a553ef4))
+* **flow_parser.py:** Add parser to support loops, rename cond_parser to flow_parser ([`78cc1da`](https://github.com/aadhithya/rajiniPP/commit/78cc1da823015655e0f071f4ebf81006f74b2c6d))
+* **ForLoop:** Add node to support for loops ([`7c951eb`](https://github.com/aadhithya/rajiniPP/commit/7c951ebcc3640c9c7ab290672b8f97586af6f9be))
+* **token.yml:** Enable for loop ([`371ebbe`](https://github.com/aadhithya/rajiniPP/commit/371ebbe313fa8b4cae1b0be66e085885ed2c7e29))
+* **__main__.py:** Add support for rajini++ shell ([`eaee4c9`](https://github.com/aadhithya/rajiniPP/commit/eaee4c96890d5ad297338c28d6d3f717c18fd90a))
+* **RppRunner:** Add eval function to evaluate statements, refactor code ([`38cb454`](https://github.com/aadhithya/rajiniPP/commit/38cb4549e38a446f6a27f5eb2f2e0a09be2253c5))
+* **parser.py:** Add line parser to parse statements, refactor code ([`24263bc`](https://github.com/aadhithya/rajiniPP/commit/24263bcf3a10514dbe4b02197e870885fa740f72))
+* **Expression:** Add expression node ([`f69ffc0`](https://github.com/aadhithya/rajiniPP/commit/f69ffc0c40cf2f4c390b501dcd0ae64bb6283b6b))
+* **runner.py:** Replace api with runner and runner class ([`64ba844`](https://github.com/aadhithya/rajiniPP/commit/64ba844f10644c49952d19e60d22d40fd645410b))
+* **ConditionalParser:** Add support for if-else statements ([`2a219dc`](https://github.com/aadhithya/rajiniPP/commit/2a219dc48370a8019c6b108318fd88131577220d))
+* **IfElseCondition:** Add node to interpret if-else statements ([`8ae2192`](https://github.com/aadhithya/rajiniPP/commit/8ae2192a081d9f9128a105b56438feaefb7d6a33))
+
+### Fix
+* **__main__.py:** Fix logger levels ([`a0000b3`](https://github.com/aadhithya/rajiniPP/commit/a0000b34568960bc738dcd5ced6c9a1f98961817))
+* **AtomParser:** Add new production rule to support loops ([`ab91aad`](https://github.com/aadhithya/rajiniPP/commit/ab91aad0fe9961129946945cc50546606331a492))
+* **base.py:** __vars__ now store the evaluated value of the variable instead of the node ([`75936c7`](https://github.com/aadhithya/rajiniPP/commit/75936c7d83b1e30cc23efaa93f41865823b0600f))
+* **__main__.py:** Fix shell false bug ([`5efcd49`](https://github.com/aadhithya/rajiniPP/commit/5efcd4925dc6cf97bbebe83b974ff9c7d5491c21))
+* **token.yml:** Enable ELSE_COND ([`bcb55aa`](https://github.com/aadhithya/rajiniPP/commit/bcb55aaac6c95b20c605375c9ac2d5cd92937b75))
+
+### Documentation
+* **LANG.md:** Move language specification to wiki ([`94d2aee`](https://github.com/aadhithya/rajiniPP/commit/94d2aeea5a6d13135872b2ff1b9893ded2552e52))
+* **while_loop.rpp:** Add while loop with break statement example ([`144204f`](https://github.com/aadhithya/rajiniPP/commit/144204f0bc54fe4b1b6cf8a055741b2b64e332e7))
+* **examples:** Add for loop and fizzbuzz examples ([`7442ffc`](https://github.com/aadhithya/rajiniPP/commit/7442ffcddab5a05fea3f6b1c7bbe9138391a191b))
+* **README.md:** Update readme ([`280e0eb`](https://github.com/aadhithya/rajiniPP/commit/280e0eb6f9c2ebde47a7ba93d562b4ac22bca8d5))
+* **examples:** Add example program for if-else statements ([`b463b52`](https://github.com/aadhithya/rajiniPP/commit/b463b52210e0a5156f6a1598d38b6af3cbbc4c54))
+* **README.md:** Update readme ([`9273dc9`](https://github.com/aadhithya/rajiniPP/commit/9273dc9424a37748a62e0c9dbf39fef740668367))
+* **README.md:** Fix formatting ([`e1e6567`](https://github.com/aadhithya/rajiniPP/commit/e1e65673ec7e3adc78ed19015d8274d264e13832))
+* **README.md:** Update installation instructions ([`594c808`](https://github.com/aadhithya/rajiniPP/commit/594c8089dffef63a32f85ba90bdf77713a4145f2))
+
 ## v0.1.2 (2022-05-14)
 ### Fix
 * **release.yml:** Add fetch depth parameter ([`cdd7108`](https://github.com/aadhithya/rajiniPP/commit/cdd71080a8e6948279eec61efc67b46108097210))
