@@ -4,9 +4,21 @@ version = "0.2.0"
 description = "Rajini++ (rajiniPP) is a programming language based on the iconic dialogues by Rajinikanth."
 authors = ["Aadhithya Sankar <a.sankar@tum.de>"]
 license = "MIT License"
+readme = "README.md"
+
+homepage = "https://github.com/aadhithya/rajiniPP"
+repository = "https://github.com/aadhithya/rajiniPP"
+documentation = "https://github.com/aadhithya/rajiniPP/wiki"
+
+keywords = ["esolang", "interpreter", "rply", "rajinipp", "superstar"]
+
+classifiers = [
+    "Topic :: Software Development :: Interpreters",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [tool.poetry.dependencies]
-python = ">3.8, <3.11"
+python = ">=3.8, <3.11"
 rply = "^0.7.8"
 munch = "^2.5.0"
 loguru = "^0.6.0"
