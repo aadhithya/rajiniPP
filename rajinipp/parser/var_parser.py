@@ -1,4 +1,4 @@
-from loguru import logger
+# from loguru import logger
 
 from ..ast.base import VarAssign, VarDeclare
 
@@ -14,7 +14,7 @@ class VariableParser:
             "statement : START_DECLARE variable DECLARE_ALT expression SEMI_COLON"
         )
         def declare_var_expr(p):
-            logger.debug("VariableParser --> assign_stmt")
+            # logger.debug("VariableParser --> assign_stmt")
             return VarDeclare(p[1], p[3])
 
         @pg.production("statement : variable ASSIGN expression SEMI_COLON")
