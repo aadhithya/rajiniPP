@@ -1,5 +1,3 @@
-import pdb
-
 from ..__rajiniworld__ import __functions__, __vars__
 from ..execptions import BreakException, ReturnException
 from .base import Node, Word
@@ -91,7 +89,6 @@ class FuncCallAssign(FuncCall):
         self.var = var
 
     def eval(self):
-        pdb.set_trace()
         __vars__[self.var.name] = self.value.eval()
         return
 
