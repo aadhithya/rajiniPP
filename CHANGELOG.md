@@ -2,6 +2,22 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2022-05-16)
+### Feature
+* **ProgramParser:** Add support for functions ([`d95a3f9`](https://github.com/aadhithya/rajiniPP/commit/d95a3f9dc01c276316fb8fb43e456ee5b8daee8f))
+* **FunctionParser:** Add parser to support functions ([`ab53faa`](https://github.com/aadhithya/rajiniPP/commit/ab53faaca610ad8ef852fb1c6ad062ac335fd136))
+* **AtomParser:** Add new production for function name ([`28c9370`](https://github.com/aadhithya/rajiniPP/commit/28c9370764aa6c35bbd7deaf1918f60baaed0e7f))
+* **ReturnException:** Add exception to handle return statements ([`cc99f7c`](https://github.com/aadhithya/rajiniPP/commit/cc99f7c40d63b6d1aa664a3930a538b4c525d605))
+* **control.py:** Add node classes to support functions ([`8e90d1e`](https://github.com/aadhithya/rajiniPP/commit/8e90d1e312e3c19a88a3fe8c680e999631a8a0ae))
+* **blocks.py:** Add classes to handle program and functions blocks ([`d2ddf15`](https://github.com/aadhithya/rajiniPP/commit/d2ddf15171b64ef1ff9ec2931d7bde9a92738426))
+* **__rajiniworld__.py:** Add __functions__ to store functions ([`efacd36`](https://github.com/aadhithya/rajiniPP/commit/efacd36e248d0e35619535e6d544460684168ec5))
+* **token.yml:** Enable tokens for functions ([`718ca1c`](https://github.com/aadhithya/rajiniPP/commit/718ca1cfe84ce0016b72592add16760f3921949c))
+
+### Documentation
+* **examples:** Add example program for functions ([`1eb0ab2`](https://github.com/aadhithya/rajiniPP/commit/1eb0ab2e8102c9440c6b06b0e1efe3728c1a936c))
+* **examples:** Add example for functions ([`505813b`](https://github.com/aadhithya/rajiniPP/commit/505813b0be79085997d9016816286310d5aec3f6))
+* **README.md:** Update readme ([`b23a777`](https://github.com/aadhithya/rajiniPP/commit/b23a777358a8a926526c29ac8b4a66f5d775a771))
+
 ## v0.2.0 (2022-05-16)
 ### Feature
 * **flow_parser.py:** Add support for while loops and break statement ([`67feeed`](https://github.com/aadhithya/rajiniPP/commit/67feeedc2582e238eaa180dea7eb57b8c5532ca2))
