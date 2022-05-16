@@ -19,7 +19,9 @@
 
 rajini++ (rajiniPP) is a programming language is a tribute to the one and only superstar and based on the iconic dialogues of Rajinikanth. This is a hobby project ans is not meant to be used for serious software development.
 
-
+## Superstar Rajinikanth
+- [Who is Rajinikanth](https://www.youtube.com/watch?v=YDUQZwMHMoo)?
+- [Rajinikanth on Wikipedia](https://en.wikipedia.org/wiki/Rajinikanth).
 
 ## Installation
 - rajinipp requires **python >= 3.8**. Install python from [here](https://www.python.org/downloads/).
@@ -82,19 +84,25 @@ will result in the following output:
 - [x] float datatype
 - [x] logical ops
 - [x] if statement
-- [ ] if-else statement
-- [ ] for loop
-- [ ] while loop
-- [ ] void functions
-- [ ] number functions
-- [ ] string functions
-
+- [x] if-else statement
+- [x] for loop
+- [x] while loop
+- [x] functions
+- [x] functions with return
+- [ ] fuinctions with arguments
+- [ ] Execute python code in rajini++ scripts
 ### rajinipp package
-- [ ] expose rajinipp python apis:
+- [ ] rajinipp python runner:
   - [ ] `rajinipp.api.require`: load rajini++ code into python program.
-  - [ ] `rajinipp.api.eval`:
-    - [ ] eval rajini++ statement in python scripts.
+  - [x] `rajinipp.runner.RppRunner.exec`: execute rajini++ programs in python loaded as string.
+  - [ ] `rajinipp.runner.RppRunner.eval`:
+    - [x] eval rajini++ statement in python scripts [limited support].
+    - [ ] support flow control statements.
     - [ ] eval function calls from loaded rajini++ code and return output.
+- [ ] rajinipp shell to run rajini++ commands from the terminal.
+  - [x] limited support using `rajinipp.runner.RppRunner.eval`.
+  - [ ] complete support to all rajini++ features.
 
 ### General
 - [x] Add tests.
+- [x] semantic releases.
