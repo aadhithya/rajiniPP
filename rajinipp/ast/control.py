@@ -1,5 +1,8 @@
-from ..execptions import BreakException
-from .base import Node
+import pdb
+
+from ..__rajiniworld__ import __functions__, __vars__
+from ..execptions import BreakException, ReturnException
+from .base import Node, Word
 
 
 class IfCondition(Node):
@@ -70,4 +73,62 @@ class Break(Node):
     def eval(self):
         raise BreakException(
             "BLACK SHEEP(break command) can be issued only inside loops!!"
+        )
+
+
+class FuncCall(Node):
+    def __init__(self, value) -> None:
+        super().__init__()
+        self.value = value
+
+    def eval(self):
+        return self.value.eval()
+
+
+class FuncCallAssign(FuncCall):
+    def __init__(self, var, value) -> None:
+        super().__init__(value)
+        self.var = var
+
+    def eval(self):
+        pdb.set_trace()
+        __vars__[self.var.name] = self.value.eval()
+        return
+
+
+class FuncWord(Word):
+    def __init__(self, value) -> None:
+        super().__init__(value)
+
+    def eval(self):
+        try:
+            __functions__[self.value.value].eval()
+        except ReturnException as ret_ex:
+            return ret_ex.return_value.eval()
+
+
+class Function(Node):
+    def __init__(self, name, stmts) -> None:
+        super().__init__()
+        self._name = name
+        self.stmts = stmts
+
+    @property
+    def name(self):
+        return self._name.name
+
+    def eval(self):
+        __functions__[self.name] = self.stmts
+        return
+
+
+class FuncReturn(Node):
+    def __init__(self, value) -> None:
+        super().__init__()
+        self.value = value
+
+    def eval(self):
+        raise ReturnException(
+            f"return triggered! Returning: {self.value.eval()}",
+            self.value,
         )
