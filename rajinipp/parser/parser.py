@@ -1,13 +1,14 @@
 from typing import List
 
-from loguru import logger
+# from loguru import logger
 from rply import ParserGenerator
 
 from ..ast.base import Expression, Print
-from ..ast.blocks import MainBlock
+from ..ast.blocks import MainBlock, ProgramBlock
 from .atom_parser import AtomParser
 from .expr_parser import ExpressionParser
 from .flow_parser import ConditionalParser, LoopParser
+from .func_parser import FunctionParser
 from .ops_parser import BinaryLogicalOpsParser, BinaryMathOpsParser
 from .print_parser import PrintParser
 from .stmt_parser import StatementParser
@@ -32,8 +33,6 @@ class ParserBase:
             ExpressionParser(),
             BinaryMathOpsParser(),
             BinaryLogicalOpsParser(),
-            ConditionalParser(),
-            LoopParser(),
             PrintParser(),
             VariableParser(),
             AtomParser(),
@@ -58,10 +57,22 @@ class ParserBase:
 
 
 class ProgramParser(ParserBase):
+    def __init__(self, tokens: List[str]) -> None:
+        super().__init__(tokens)
+        self.parsers += [
+            ConditionalParser(),
+            LoopParser(),
+            FunctionParser(),
+        ]
+
     def parse(self):
+        @self.pg.production("program : functions main")
+        def program(p):
+            return ProgramBlock(p[0], p[1])
+
         @self.pg.production("main : PGM_START statements PGM_END")
         def main(p):
-            logger.debug("Parser --> main")
+            # logger.debug("Parser --> main")
             return MainBlock(p[1])
 
         self.init_parsers()
@@ -70,12 +81,6 @@ class ProgramParser(ParserBase):
 class LineParser(ParserBase):
     def __init__(self, tokens: List[str]) -> None:
         super().__init__(tokens)
-        # * remove StatementParser. We will build our own here.
-        self.parsers.pop(0)
-        # * remove ConditionalParser. Line Parser will not support it yet.
-        self.parsers.pop(3)
-        # * remove LoopParser. Line Parser will not support it yet.
-        self.parsers.pop(3)
 
     def parse(self):
         @self.pg.production("statement : PRINT printexprs SEMI_COLON")
