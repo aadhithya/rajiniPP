@@ -1,4 +1,4 @@
-from loguru import logger
+# from loguru import logger
 
 from ..ast.ops import UnarySub, UnarySum
 
@@ -11,7 +11,7 @@ class ExpressionParser:
             "expression : expression mathop expression", precedence="MATHOP"
         )
         def binary_arith_expr(p):
-            logger.debug("Parser --> expression")
+            # logger.debug("Parser --> expression")
             left = p[0]
             right = p[2]
             OpNode = p[1]
