@@ -2,6 +2,15 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.1 (2022-05-21)
+### Fix
+* Make runner available from base package ([`5c59466`](https://github.com/aadhithya/rajiniPP/commit/5c59466ff0b48d064f7649d73bd883203ea4da22))
+* Add init files to submodules ([`53d6378`](https://github.com/aadhithya/rajiniPP/commit/53d6378c47af8108d35a355f2c976c0f72c8f0aa))
+
+### Documentation
+* Add issue and pr templates ([`1deabc4`](https://github.com/aadhithya/rajiniPP/commit/1deabc4c60572b0fb2dad3407f90f5ef91ecd704))
+* Add contributing code of conduct guidelines ([`b547186`](https://github.com/aadhithya/rajiniPP/commit/b547186df1dfa31412014973407a4e84d9883e90))
+
 ## v0.3.0 (2022-05-16)
 ### Feature
 * **ProgramParser:** Add support for functions ([`d95a3f9`](https://github.com/aadhithya/rajiniPP/commit/d95a3f9dc01c276316fb8fb43e456ee5b8daee8f))
