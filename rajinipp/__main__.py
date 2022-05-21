@@ -3,8 +3,7 @@ import sys
 from loguru import logger
 from typer import Typer
 
-from . import __version__, __version_str__
-from .runner import RppRunner
+from . import __version__, __version_str__, rpp
 
 app = Typer()
 
@@ -24,8 +23,7 @@ def tokenize(file_path: str):
     with open(file_path, "r") as f:
         code_str = f.read()
 
-    runner = RppRunner()
-    tokens = runner.tokenize(code=code_str)
+    tokens = rpp.tokenize(code=code_str)
     for token in tokens:
         print(token)
 
@@ -40,17 +38,15 @@ def run(file_path: str, debug: bool = False):
     with open(file_path, "r") as f:
         code_str = f.read()
 
-    runner = RppRunner()
-    runner.exec(code=code_str, log_level=level)
+    rpp.exec(code=code_str, log_level=level)
 
 
 @app.command()
 def shell():
-    runner = RppRunner()
     print(f"rajini++ v{__version__}")
     while True:
         code_line = input("rajinipp>> ")
-        output = runner.eval(code_line)
+        output = rpp.eval(code_line)
         if output is not None:
             print(output)
 
