@@ -17,7 +17,7 @@
 [![GitHub followers](https://img.shields.io/github/followers/aadhithya?style=social)](https://github.com/aadhithya)
 
 
-rajini++ (rajiniPP) is a programming language is a tribute to the one and only superstar and based on the iconic dialogues of Rajinikanth. This is a hobby project ans is not meant to be used for serious software development.
+rajini++ (rajiniPP) the programming language is a tribute to the one and only superstar and based on the iconic dialogues of Rajinikanth. This is a hobby project and is not meant to be used for serious software development.
 
 ## Superstar Rajinikanth
 - [Who is Rajinikanth](https://www.youtube.com/watch?v=YDUQZwMHMoo)?
