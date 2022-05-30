@@ -9,6 +9,13 @@ class PrintBlock(Node):
         self.exprs = exprs
         self.value = value
 
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        if self.exprs:
+            self.exprs.set_scope(scope)
+        if self.value:
+            self.value.set_scope(scope)
+
     def eval(self):
         if self.exprs:
             return self.exprs.eval() + [self.value.eval()]
@@ -20,6 +27,12 @@ class StatementsBlock(Node):
         super().__init__()
         self.statements = statements
         self.statement = statement
+
+    def set_scope(self, scope: str):
+        if self.statements:
+            self.statements.set_scope(scope)
+        if self.statement:
+            self.statement.set_scope(scope)
 
     def eval(self):
         if self.statements:
@@ -37,6 +50,10 @@ class MainBlock(Node):
         super().__init__()
         self.statements = statements
 
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.statements.set_scope(scope)
+
     def eval(self):
         return self.statements.eval()
 
@@ -46,6 +63,13 @@ class FunctionsBlock(Node):
         super().__init__()
         self.functions = functions
         self.function = function
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        if self.functions:
+            self.functions.set_scope(scope)
+        if self.function:
+            self.function.set_scope(scope)
 
     def eval(self):
         if self.functions:
@@ -58,6 +82,13 @@ class ProgramBlock(Node):
         super().__init__()
         self.functions = functions
         self.main = main
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        for fn in self.functions:
+            if fn:
+                fn.set_scope(scope)
+        self.main.set_scope(scope)
 
     def eval(self):
         return self.functions.eval() + [self.main.eval()]

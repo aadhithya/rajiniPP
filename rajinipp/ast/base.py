@@ -4,9 +4,18 @@ from ..__rajiniworld__ import __vars__
 
 
 class Node(ABC):
+    def __init__(self) -> None:
+        super().__init__()
+        self.scope = "main"
+        self._prev_scope = "main"
+
     @abstractclassmethod
     def eval(self):
         pass
+
+    def set_scope(self, scope: str = "main"):
+        self._prev_scope = self.scope
+        self.scope = scope
 
 
 class Number(Node):
@@ -49,13 +58,17 @@ class Word(Node):
         return self.value.value
 
     def eval(self):
-        return __vars__[self.name]
+        return __vars__[self.scope][self.name]
 
 
 class Print(Node):
     def __init__(self, value) -> None:
         super().__init__()
         self.value = value
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.value.set_scope(scope)
 
     def eval(self):
         value = self.value.eval()
@@ -80,9 +93,23 @@ class VarDeclare(Node):
         self.var = var
         self.value = value
 
+    def __update_var_scope(self):
+        if self.var.name in __vars__[self._prev_scope]:
+            __vars__[self.scope][self.var.name] = __vars__[self._prev_scope][
+                self.var.name
+            ]
+            _ = __vars__[self._prev_scope].pop(self.var.name, None)
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        # self.__update_var_scope()
+        self.value.set_scope(scope)
+
     def eval(self):
         # * save just the variable values instead of the node.
-        __vars__[self.var.name] = self.value.eval()
+        if self.scope not in __vars__:
+            __vars__[self.scope] = {}
+        __vars__[self.scope][self.var.name] = self.value.eval()
         return self.value.eval()
 
 
@@ -92,16 +119,32 @@ class VarAssign(Node):
         self.var = var
         self.value = value
 
+    def __update_var_scope(self):
+        if self.var.name in __vars__[self._prev_scope]:
+            __vars__[self.scope][self.var.name] = __vars__[self._prev_scope][
+                self.var.name
+            ]
+            _ = __vars__[self._prev_scope].pop(self.var.name, None)
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        # self.__update_var_scope()
+        self.value.set_scope(scope)
+
     def eval(self):
-        if self.var.name not in __vars__:
+        if self.var.name not in __vars__[self.scope]:
             raise NameError(f"variable {self.var.name} does not exist.")
-        __vars__[self.var.name] = self.value.eval()
+        __vars__[self.scope][self.var.name] = self.value.eval()
 
 
 class Expression(Node):
     def __init__(self, value) -> None:
         super().__init__()
         self.value = value
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.value.set_scope(scope)
 
     def eval(self):
         return self.value.eval()

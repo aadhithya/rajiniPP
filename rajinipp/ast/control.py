@@ -9,6 +9,11 @@ class IfCondition(Node):
         self.condition = condition
         self.value = value
 
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.condition.set_scope(scope)
+        self.value.set_scope(scope)
+
     def eval(self):
         if self.condition.eval():
             return self.value.eval()
@@ -21,6 +26,12 @@ class IfElseCondition(Node):
         self.condition = condition
         self.true_value = true_value
         self.false_value = false_value
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.condition.set_scope(scope)
+        self.true_value.set_scope(scope)
+        self.false_value.set_scope(scope)
 
     def eval(self):
         if self.condition.eval():
@@ -35,6 +46,12 @@ class ForLoop(Node):
         self.range_start = range_start
         self.range_end = range_end
         self.stmts = stmts
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.range_start.set_scope(scope)
+        self.range_end.set_scope(scope)
+        self.stmts.set_scope(scope)
 
     def eval(self):
         # * we surround with try-catch block to support break command.
@@ -53,6 +70,11 @@ class WhileLoop(Node):
         super().__init__()
         self.condition = condition
         self.stmts = stmts
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.condition.set_scope(scope)
+        self.stmts.set_scope(scope)
 
     def eval(self):
         # * we surround with try-catch block to support break command.
@@ -89,7 +111,9 @@ class FuncCallAssign(FuncCall):
         self.var = var
 
     def eval(self):
-        __vars__[self.var.name] = self.value.eval()
+        if self.scope not in __vars__:
+            __vars__[self.scope] = {}
+        __vars__[self.scope][self.var.name] = self.value.eval()
         return
 
 
@@ -99,9 +123,12 @@ class FuncWord(Word):
 
     def eval(self):
         try:
-            __functions__[self.value.value].eval()
+            out = __functions__[self.value.value].eval()
         except ReturnException as ret_ex:
-            return ret_ex.return_value.eval()
+            out = ret_ex.return_value.eval()
+        finally:
+            __vars__.pop(self.name, None)
+            return out
 
 
 class Function(Node):
@@ -109,10 +136,15 @@ class Function(Node):
         super().__init__()
         self._name = name
         self.stmts = stmts
+        self.set_scope(self.name)
 
     @property
     def name(self):
         return self._name.name
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.stmts.set_scope(scope)
 
     def eval(self):
         __functions__[self.name] = self.stmts
@@ -123,6 +155,10 @@ class FuncReturn(Node):
     def __init__(self, value) -> None:
         super().__init__()
         self.value = value
+
+    def set_scope(self, scope: str = "main"):
+        super().set_scope(scope)
+        self.value.set_scope(scope)
 
     def eval(self):
         raise ReturnException(
