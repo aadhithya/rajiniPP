@@ -89,6 +89,7 @@ will result in the following output:
 - [x] while loop
 - [x] functions
 - [x] functions with return
+- [x] variable scopes
 - [ ] fuinctions with arguments
 - [ ] Execute python code in rajini++ scripts
 ### rajinipp package
