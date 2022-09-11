@@ -1,5 +1,5 @@
 from ..__rajiniworld__ import __functions__, __vars__
-from ..execptions import BreakException, ReturnException
+from ..exceptions import BreakException, ReturnException
 from .base import Node, Word
 
 
