@@ -61,7 +61,7 @@ class RppRunner:
 
     def exec(self, code: str, log_level: str = "INFO"):
         """
-        exec executes a copmplete rajini++ program.
+        exec executes a complete rajini++ program.
 
         Args:
             code (str): the rajini++ program to execute.
