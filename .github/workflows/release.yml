@@ -4,7 +4,7 @@ on:
     branches: [master]
 
 env:
-  PYTHON_VERSION: "3.8.5"
+  PYTHON_VERSION: "3.9"
   PROJECT_FOLDER: ./rajinipp
   TEST_FOLDER: tests
 
